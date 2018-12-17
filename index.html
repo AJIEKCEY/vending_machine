@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <title>Wending Machine</title>
+</head>
+<body>
+    <div id="app" class="app">
+        <div class="yourWallet walletWrapper">
+            <div class="coinsContainer">
+                <div class="coin" v-for="(coin, index) in yourWallet">
+                    <div class="picture" @click="addToDeposit(index)">{{ coin.value }}</div>
+                    <span>Количество: {{ coin.quantity }}</span>
+                    <button @click="addToDeposit(index)">Внести</button>
+                </div>
+            </div>
+        </div>
+        <div class="vmWrapper">
+            <div class="assortment">
+                <div class="good" v-for="(good, index) in vmStock">
+                    <div>
+                        <p>{{ good.name }} - {{ good.price }}р.</p>
+                        <span>Осталось: {{ good.quantity }} порции</span>
+                    </div>
+                    <button @click="buy(index)">Хочу</button>
+                </div>
+            </div>
+            <div class="walletWrapper">
+                <div class="amount">
+                    Внесенная сумма: {{ amount }}р.
+                    <button @click="giveChange()">Сдача</button>
+                </div>
+                <div class="outputMessage">{{ message }}</div>
+                <div class="coinsContainer">
+                    <div class="coin" v-for="coin in vmWallet">
+                        <div class="picture">{{ coin.value }}</div>
+                        <span>{{ coin.quantity }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

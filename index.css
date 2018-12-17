@@ -1,0 +1,67 @@
+.app {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.coinsContainer {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #dddddd
+}
+
+.coin {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    text-align: center;
+    user-select: none;
+}
+
+.coin .picture {
+    height: 50px;
+    width: 50px;
+    border: 2px solid #5d5d5d;
+    border-radius: 50%;
+    font-size: 36px;
+    text-align: center;
+    line-height: 50px;
+    margin: 0 auto 5px;
+}
+
+.yourWallet .coin .picture:hover {
+    background-color: #a5b4ff;
+}
+
+.good {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.good button {
+    margin: 0 0 0 15px;
+}
+
+.good p {
+    margin: 5px 0 ;
+    font-size: 20px;
+}
+
+.good span {
+    font-style: italic;
+}
+
+.vmWrapper {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.assortment {
+    margin-right: 15px;
+}
+
+.outputMessage {
+    font-size: 24px;
+    margin: 20px 0;
+}
